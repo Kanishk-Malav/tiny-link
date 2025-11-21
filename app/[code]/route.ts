@@ -26,8 +26,8 @@ export async function GET(
       data: { clicks: { increment: 1 } }
     })
 
-    // Redirect with 301 status (permanent redirect)
-    return NextResponse.redirect(link.targetUrl, { status: 301 })
+    // Redirect with 302 status (temporary redirect)
+    return NextResponse.redirect(link.targetUrl, { status: 302 })
   } catch (error) {
     console.error('Error redirecting:', error)
     return NextResponse.json(

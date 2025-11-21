@@ -9,7 +9,7 @@ A production-ready URL shortening service built with Next.js, TypeScript, Prisma
 - ✅ Clean, responsive dashboard
 - ✅ RESTful API endpoints
 - ✅ Health check monitoring
-- ✅ 301 redirects for SEO
+- ✅ 302 redirects (temporary)
 - ✅ PostgreSQL database with Prisma ORM
 - ✅ Production-ready deployment
 
@@ -81,9 +81,10 @@ Content-Type: application/json
 }
 ```
 
-**Response (404) - Code exists:**
+**Response (409) - Code exists:**
 ```json
 {
+  "success": false,
   "error": "Short code already exists"
 }
 ```
@@ -146,11 +147,11 @@ DELETE /api/links/:code
 GET /:code
 ```
 
-**Response:** 301 redirect to target URL or 404 if not found
+**Response:** 302 redirect to target URL or 404 if not found
 
 ### Health Check
 ```http
-GET /health
+GET /healthz
 ```
 
 **Response (200):**

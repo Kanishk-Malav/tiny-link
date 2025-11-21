@@ -97,8 +97,8 @@ describe('API Endpoints - Property-Based Tests', () => {
             const response = await POST(mockRequest)
             const data = await response.json()
 
-            // Should return 404 status (as per requirements)
-            expect(response.status).toBe(404)
+            // Should return 409 status (conflict - code already exists)
+            expect(response.status).toBe(409)
             expect(data.success).toBe(false)
             expect(data.error).toContain('already exists')
           }

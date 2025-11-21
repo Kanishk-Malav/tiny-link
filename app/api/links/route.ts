@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
             success: false,
             error: 'Short code already exists' 
           },
-          { status: 404 } // As per requirements: return 404 if code exists
+          { status: 409 } // Conflict - code already exists
         )
       }
     }
