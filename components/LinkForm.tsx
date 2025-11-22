@@ -81,14 +81,15 @@ export default function LinkForm({ onLinkCreated }: LinkFormProps) {
             Target URL *
           </label>
           <input
-            type="text"
-            id="targetUrl"
-            value={targetUrl}
-            onChange={(e) => setTargetUrl(e.target.value)}
-            placeholder="https://example.com/very/long/url"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-            disabled={loading}
-          />
+  type="text"
+  id="targetUrl"
+  value={targetUrl}
+  onChange={(e) => setTargetUrl(e.target.value)}
+  placeholder="https://example.com/very/long/url"
+  className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+  disabled={loading}
+/>
+
         </div>
 
         {/* Custom Code Input (Optional) */}
